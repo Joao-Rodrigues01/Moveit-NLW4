@@ -15,7 +15,6 @@ export function CountDown() {
 
 	function startCountdown() {
 		setActvie(true);
-
 	}
 
 	useEffect(() => {
