@@ -1,6 +1,6 @@
-# Move It
+# <img src="./github/logo-full.svg" alt="moveit logo" width="160px"/>
 
-  <center ><img src="./github/moveit-gif.gif" alt="pokedex gif" width="620px"/> </center>
+  <center ><img src="./github/moveit-gif.gif" alt="moveit gif" width="620px"/> </center>
 
 
 
@@ -33,4 +33,4 @@ yarn dev
 ## Tela de level up
 
 
-<center ><img src="./github/levelup.png" alt="pokedex gif" width="520px"/> </center>
+<center ><img src="./github/levelup.png" alt="level up picture" width="520px"/> </center>
