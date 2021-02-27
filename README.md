@@ -33,4 +33,4 @@ yarn dev
 ## Tela de level up
 
 
-<center ><img src="./github/levelup.png" alt="level up picture" width="520px"/> </center>
+<center ><img src="./github/levelup2.png" alt="level up picture" width="520px"/> </center>
