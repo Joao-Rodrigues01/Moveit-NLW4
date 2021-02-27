@@ -1,6 +1,9 @@
 import { useContext } from 'react';
 import { CountdownContext } from '../contexts/CountdownContext';
+import { CicleButton } from './CicleButton';
+import { FaCheckCircle, FaPlay } from 'react-icons/fa';
 import styles from '../styles/components/CountDown.module.css';
+import { FiX } from 'react-icons/fi';
 
 
 export function CountDown() {
@@ -32,30 +35,36 @@ export function CountDown() {
 			</div>
 
 			{ hasFinished ? (
-				<button
+				<CicleButton
 					disabled
+					iconSize={24}
+					title="Ciclo encerrado"
 					className={styles.countdownButton}
-				>
-					Ciclo encerrado
-				</button>
+					icon={FaCheckCircle}
+					iconColor="#4CD62B"
+				/>
 				) : (
 					<>
 						{ isActive ?(
-								<button
-									type="button"
-									className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-									onClick={resetCountdown}
-								>
-									Abandonar ciclo
-								</button>
+								<CicleButton
+								type="button"
+								iconSize={26}
+								title="	Abandonar ciclo"
+								className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+								onClick={resetCountdown}
+								icon={FiX}
+								iconColor="#666666"
+							/>
 									) : (
-								<button
-									type="button"
-									className={styles.countdownButton}
-									onClick={startCountdown}
-								>
-									Iniciar um ciclo
-								</button>
+								<CicleButton
+								type="button"
+								iconSize={16}
+								title="	Iniciar um ciclo"
+								className={styles.countdownButton}
+								onClick={startCountdown}
+								icon={FaPlay}
+								iconColor="#FFF"
+							/>
 								)}
 					</>
 				)

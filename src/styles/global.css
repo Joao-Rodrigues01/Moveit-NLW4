@@ -38,6 +38,22 @@ body {
 
 body, input, button, textarea {
   font: 400 1rem "Inter", sans-serif;
+	border: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--text-highlight);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: var(--text-highlight);
+
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+	color: var(--text-highlight);
+
 }
 
 /* 1rem = 16px */

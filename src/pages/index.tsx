@@ -1,60 +1,46 @@
-import Head from 'next/head';
-import { GetServerSideProps } from 'next';
-import { CompletedChallegens } from "../components/CompletedChallenges";
-import { CountDown } from "../components/CountDown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-import { ChallengeBox } from "../components/ChallengeBox";
+import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/router'
+import styles from '../styles/pages/Dashboard.module.css';
+import { FiArrowRight } from 'react-icons/fi';
 
-import styles from '../styles/pages/Home.module.css'
-import { CountdownProvider } from '../contexts/CountdownContext';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
+export default function Home() {
 
-interface HomeProps {
-	level: number;
-	currentExperience: number;
-	challengesCompleted: number;
-}
+	const { push } = useRouter();
 
-export default function Home(props: HomeProps) {
-  return (
-		<ChallengesProvider
-			level={props.level}
-			currentExperience={props.currentExperience}
-			challengesCompleted={props.challengesCompleted}
-		>
-			<div className={styles.container}>
-				<Head>
-					<title>Início | move it</title>
-				</Head>
-				<ExperienceBar />
+	const [username, setUsername] = useState('');
 
-			<CountdownProvider>
-				<section>
-					<div>
-						<Profile />
-						<CompletedChallegens />
-						<CountDown />
-					</div>
-					<div>
-						<ChallengeBox />
-					</div>
-				</section>
-			</CountdownProvider>
-			</div>
-		</ChallengesProvider>
-  )
-}
-
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-
-	return {
-		props:{
-			level: Number(level),
-			currentExperience: Number(currentExperience),
-			challengesCompleted: Number(challengesCompleted)
-		}
+	function handleSubmit(e: FormEvent) {
+		e.preventDefault();
+		push(`/${username}`)
 	}
+
+	return (
+		<div >
+				<div className={styles.container}>
+						<img src="/moveit-background.svg" alt="moveit" height="700px"/>
+
+						<form onSubmit={handleSubmit}>
+								<img src="/logo-full-white.svg" alt="moveit logo white"/>
+
+								<h1>Bem-vindo</h1>
+									<span>
+										<img src="github-logo.svg" alt="github"/>
+										<p>Faça login com seu Github para começar</p>
+									</span>
+
+									<div className={styles.loginGithub}>
+										<input
+											type="text"
+											placeholder="Digite seu username"
+											onChange={e => setUsername(e.target.value)}
+											required
+										/>
+										<button type="submit" >
+											<FiArrowRight size={24} color="#FFF"/>
+										</button>
+									</div>
+						</form>
+				</div>
+		</div>
+	)
 }
