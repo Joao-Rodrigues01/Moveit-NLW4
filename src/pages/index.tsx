@@ -17,7 +17,7 @@ export default function Home() {
 	return (
 		<div >
 				<div className={styles.container}>
-						<img src="/moveit-background.svg" alt="moveit" height="700px"/>
+						<img className={styles.moveImg} src="/moveit-background.svg" alt="moveit" />
 
 						<form onSubmit={handleSubmit}>
 								<img src="/logo-full-white.svg" alt="moveit logo white"/>

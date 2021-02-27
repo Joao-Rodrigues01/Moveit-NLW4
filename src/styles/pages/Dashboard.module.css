@@ -6,6 +6,10 @@
   display: flex;
 }
 
+.moveImg{
+	height: 45rem;
+}
+
 .container form {
 	display: flex;
 
@@ -61,4 +65,24 @@
 
 .container form .loginGithub input:valid + button{
 	background: var(--green);
+}
+
+@media(max-width: 1282px){
+	.container form {
+		margin-left: 0;
+	}
+
+	.moveImg {
+		height: 42rem;
+	}
+}
+
+@media(max-width: 1132px){
+	.container {
+		justify-content: center;
+		align-items: center;
+	}
+	.moveImg {
+		display: none;
+	}
 }
