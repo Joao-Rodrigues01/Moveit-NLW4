@@ -1,6 +1,6 @@
 # <img src="./github/logo-full.svg" alt="moveit logo" width="160px"/>
 
-  <center ><img src="./github/moveit-gif.gif" alt="moveit gif" width="620px"/> </center>
+  <center ><img src="./github/moveit-gif2.gif" alt="moveit gif" width="620px"/> </center>
 
 
 
