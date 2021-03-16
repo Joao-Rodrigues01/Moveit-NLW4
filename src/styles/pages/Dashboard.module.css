@@ -1,22 +1,29 @@
 .container {
   height: 100vh;
-  margin: 0 auto;
+	width: 100%;
 	background: var(--blue);
-
   display: flex;
+	align-items: center;
 }
 
 .moveImg{
-	height: 45rem;
+	height: 100vh;
+	background: url('/moveit-background.svg') no-repeat center;
+	background-size: contain;
+	flex: 1;
 }
 
 .container form {
+	max-width: 600px;
+	width: 100%;
 	display: flex;
-
 	flex-direction: column;
-	align-items: flex-start;
 	justify-content: center;
-	margin-left: 7.5rem;
+	padding: 0 5rem;
+}
+
+.container form img {
+	width: 30rem;
 }
 
 
